@@ -1,6 +1,8 @@
 import streamlit as st
 import random
 import time
+import json
+import requests
 
 #this is second
 # Streamed response emulator
