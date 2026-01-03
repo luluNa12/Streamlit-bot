@@ -2,6 +2,7 @@ import streamlit as st
 import random
 import time
 
+#this is second
 # Streamed response emulator
 def response_generator():
     response = random.choice(
@@ -15,7 +16,7 @@ def response_generator():
         yield word + " "
         time.sleep(0.05)
 
-
+#this is first
 st.title("Simple chat")
 
 # Initialize chat history
@@ -34,13 +35,10 @@ if prompt := st.chat_input("What is up?"):
         st.markdown(prompt)
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
-    
+
 # Display assistant response in chat message container
 with st.chat_message("assistant"):
     response = st.write_stream(response_generator())
 
 # Add assistant response to chat history
 st.session_state.messages.append({"role": "assistant", "content": response})
-
-
-
