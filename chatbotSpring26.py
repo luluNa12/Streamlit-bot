@@ -2,7 +2,7 @@ import streamlit as st
 import random
 import time
 
-st.title("Simple chat")
+
 
 # Streamed response emulator
 def response_generator():
@@ -16,6 +16,8 @@ def response_generator():
     for word in response.split():
         yield word + " "
         time.sleep(0.05)
+
+st.title("Simple chat")
 
 # Initialize chat history
 if "messages" not in st.session_state:
